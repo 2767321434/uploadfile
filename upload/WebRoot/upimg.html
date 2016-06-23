@@ -1,0 +1,95 @@
+<html>
+<head>
+    <script>
+    var input=document.getElementById("file");
+    input.prototype.abc=function()
+    {
+    alert("abc");
+    }
+    
+    function a()
+    {
+    input.abc();
+    }
+ /*    var httpXML = null;
+    var f_input;
+    var timer;
+    var httpProgress = null;
+    var uurl = "Upload";
+    var gurl = "getProgress";
+	    
+    window.onload=function init(){
+                f_input = document.getElementById("file");
+            }
+    function add()
+        {
+        f_input.click();
+        }
+    
+    function upload(){
+    
+                var f=f_input.files[0];
+                        if (f != undefined & f != null) {
+                            
+                            if (window.XMLHttpRequest) {
+                                httpUP = new XMLHttpRequest();
+                            }
+                            else 
+                                if (window.ActiveXObject) {
+                                    httpUP = new ActiveXObject("Microsoft.XMLHTTP");
+                                }
+                            var formData = new FormData();
+                            formData.append("file", f);
+                            httpUP.open("POST", uurl, true);
+                            httpUP.send(formData);
+                            timer = setInterval("getP()", 50);
+                            
+                        }
+                    }
+        function getP(){
+                if (window.XMLHttpRequest) {
+                    httpProgress = new XMLHttpRequest();
+                }
+                else 
+                    if (window.ActiveXObject) {
+                        httpProgress = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                httpProgress.onreadystatechange = onProgress;
+                
+                httpProgress.open("post", gurl, true);
+                
+                httpProgress.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                httpProgress.send("&timeStamp=" + (new Date()).getTime());
+            }
+            
+            function onProgress(){
+                if (httpProgress.readyState == 4 && httpProgress.status == 200) {
+                    result = httpProgress.responseText;
+                    var result = result.replace(/(^\s*)|(\s*$)/g, "");
+                    var res = result.split(",");
+                    var now = parseInt(res[0]);
+                    var all = parseInt(res[1]);
+                    var err = res[2];
+                    var state = res[3];
+                    var path = res[4];
+                    var per = (now / all * 100).toFixed(2);
+
+                    if (err != "" & err.length > 0 & err != null) {
+                        window.clearInterval(timer); 
+                        alert(err);
+                        return;
+                    }
+                    if (state == "OK") {
+                        window.clearInterval(timer);
+                        document.getElementById("img").src=path;
+                        return;
+                    }
+                    }
+                } */
+    </script>
+    </head>
+    <body>
+    <img alt="sdf" src="" id="img" width="50" height="50" onclick="a()"/>
+        <input type="file" id="file" hidden="true" onchange="upload()" >
+    </body>
+</html>

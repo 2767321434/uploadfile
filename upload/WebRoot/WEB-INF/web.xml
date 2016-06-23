@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>upload</display-name>
+  <servlet>
+    <description>上传</description>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>util.upload.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>获取上传进度</description>
+    <display-name>getProgressServlet</display-name>
+    <servlet-name>getProgressServlet</servlet-name>
+    <servlet-class>util.upload.GetProgressServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>列出文件</description>
+    <display-name>listfile</display-name>
+    <servlet-name>ListFileServlet</servlet-name>
+    <servlet-class>util.upload.ListFileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/Upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getProgressServlet</servlet-name>
+    <url-pattern>/getProgress</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListFileServlet</servlet-name>
+    <url-pattern>/ListFileServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <!-- 设置监听器，定时删除 -->
+     <listener>
+        <listener-class>util.upload.ExcelTempFileListener</listener-class>
+    </listener> 
+</web-app>

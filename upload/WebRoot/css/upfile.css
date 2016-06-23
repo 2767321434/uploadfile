@@ -1,0 +1,30 @@
+            #file {
+                display: none;
+            }
+            .pro{
+            	width:500px;
+            }
+            .pborder {
+                
+                position: relative;
+                width: 500px; /* 宽度 */
+                border: 1px solid #B1D632;
+                padding: 1px;
+            }
+            
+            .drawpro {
+                width: 0px;
+                display: block;
+                position: relative;
+                background: #B1D632;
+                color: #333333;
+                height: 20px; /* 高度 */
+                line-height: 20px; /* 必须和高度一致，文本才能垂直居中 */
+            }
+            
+            .pspan {
+                position: absolute;
+                width: 500px;
+                text-align: center;
+                font-weight: bold;
+            }
